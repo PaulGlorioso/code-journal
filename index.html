@@ -26,14 +26,14 @@
         <img class="photoholder column-2" src="/images/placeholder-image-square.jpg" alt="placeholder-image">
         <div class="column-2">
           <label for="title">Title</label>
-          <input required name="title" type="text">
+          <input required name="title" id="title" type="text">
           <label for="photo">Photo URL</label>
-          <input required name="photo" type="url">
+          <input required name="photo" id="photourl" type="url">
         </div>
         <label for="notes">Notes</label>
-        <textarea required name="notes" rows="6"></textarea>
+        <textarea required name="notes" id="notes" rows="6"></textarea>
         <div class="submit">
-          <button type="submit">Save</button>
+          <button class="subbtn" type="submit">Save</button>
         </div>
       </form>
     </div>
