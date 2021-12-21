@@ -13,11 +13,30 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
+    <h2 class="font-family-mukta">Code Journal</h2>
   </header>
   <main>
+    <div class="data" data-view="entry-form">
+      <form id="form">
+        <h1 class="font-family-mukta">New Entry</h1>
+        <img class="photoholder column-2" src="/images/placeholder-image-square.jpg" alt="placeholder-image">
+        <div class="column-2">
+          <label for="title">Title</label>
+          <input required name="title" id="title" type="text">
+          <label for="photo">Photo URL</label>
+          <input required name="photo" id="photourl" type="url">
+        </div>
+        <label for="notes">Notes</label>
+        <textarea required name="notes" id="notes" rows="6"></textarea>
+        <div class="submit">
+          <button class="subbtn" type="submit">SAVE</button>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

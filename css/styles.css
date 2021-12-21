@@ -1,0 +1,120 @@
+body {
+  background-color: #f0f0f0;
+}
+
+.font-family-mukta {
+  font-family: Mukta, sans-serif;
+}
+
+header {
+  display: flex;
+  background-color: #562b81;
+  padding-left: 5%;
+}
+
+header > h2 {
+  color: white;
+  font-weight: 100;
+  margin: 5px 0;
+}
+
+form > h1 {
+  letter-spacing: 1px;
+  font-size: 35px;
+  margin: 0;
+}
+
+img {
+  border: 0 solid white;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+}
+
+label {
+  font-family: Mukta, sans-serif;
+  font-weight: bold;
+  padding: 5px 0;
+  letter-spacing: 1px;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+input:focus {
+  border: 5px solid #562b81;
+}
+
+textarea {
+  padding: 5px;
+  font-family: sans-serif;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+textarea:focus {
+  border: 5px solid #562b81;
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+button {
+  background-color: #562b81;
+  color: white;
+  border: 0 solid white;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.column-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1000px) {
+  header > h2 {
+    margin-left: 425px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 500px;
+    margin-right: 500px;
+  }
+
+  form > h1 {
+    width: 100%;
+  }
+
+  form > img {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .column-2 {
+    flex-basis: 50%;
+    padding-bottom: 25px;
+  }
+
+  .submit {
+    width: 100%;
+  }
+}
