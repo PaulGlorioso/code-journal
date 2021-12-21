@@ -8,10 +8,7 @@ body {
 
 header {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
   background-color: #562b81;
-  width: 100%;
   padding-left: 5%;
 }
 
@@ -28,7 +25,6 @@ form > h1 {
 }
 
 img {
-  width: 100%;
   border: 0 solid white;
   border-radius: 5px;
 }
@@ -70,7 +66,6 @@ textarea:focus {
 
 .submit {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   padding-top: 20px;
 }
@@ -108,10 +103,6 @@ button {
   form > img {
     width: 50%;
     padding-right: 20px;
-  }
-
-  label {
-    width: 100%;
   }
 
   textarea {
