@@ -18,7 +18,7 @@ document.addEventListener('submit', function (event) {
   values.note = notes.value;
   values.entryId = data.nextEntryId;
   data.nextEntryId++;
-  data.entries.push(values);
+  data.entries.unshift(values);
   holder.setAttribute('src', '/images/placeholder-image-square.jpg');
   form.reset();
 });
