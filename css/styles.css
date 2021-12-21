@@ -88,20 +88,13 @@ button {
   flex-direction: column;
 }
 
-@media screen and (min-width: 800px) {
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
+@media screen and (min-width: 1000px) {
   header > h2 {
     margin-left: 425px;
   }
 
   form {
     display: flex;
-    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: 500px;
@@ -115,8 +108,6 @@ button {
   form > img {
     width: 50%;
     padding-right: 20px;
-    border: 1 solid #f0f0f0;
-    border-radius: 5px;
   }
 
   label {
@@ -128,8 +119,6 @@ button {
   }
 
   .column-2 {
-    display: flex;
-    flex-direction: column;
     flex-basis: 50%;
     padding-bottom: 25px;
   }
