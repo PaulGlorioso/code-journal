@@ -135,6 +135,10 @@ ul {
   flex-direction: column;
 }
 
+.data.hidden {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) {
   header > h2 {
     margin-left: 425px;

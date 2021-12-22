@@ -22,3 +22,16 @@ document.addEventListener('submit', function (event) {
   holder.setAttribute('src', '/images/placeholder-image-square.jpg');
   form.reset();
 });
+
+var formBtn = document.querySelector('.new-entry');
+var counter = 1;
+var entryForm = document.querySelector('.data');
+
+function newEntryForm(event) {
+  if (counter % 2) {
+    entryForm.className = 'data';
+  } else {
+    entryForm.className = 'data hidden';
+  }
+}
+formBtn.addEventListener('click', newEntryForm);
