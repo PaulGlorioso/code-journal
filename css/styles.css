@@ -78,6 +78,29 @@ button {
   padding: 10px 20px;
 }
 
+#entry-list {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  padding: 5px 20px;
+}
+
+.entries > h2 {
+  letter-spacing: 1px;
+  font-size: 35px;
+  margin: 0;
+  padding-left: 15px;
+}
+
+.entry-photo > img {
+  width: 100%;
+  padding: 15px;
+  border: 0 solid;
+  border-radius: 30px;
+}
+
 .column-2 {
   display: flex;
   flex-direction: column;
@@ -116,5 +139,43 @@ button {
 
   .submit {
     width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 500px;
+    margin-right: 500px;
+  }
+
+  .entries > h2 {
+    font-size: 35px;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-left: 500px;
+    margin-right: 500px;
+  }
+
+  .entry-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+  }
+
+  .entry-photo > img {
+    width: 100%;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 25px;
   }
 }
