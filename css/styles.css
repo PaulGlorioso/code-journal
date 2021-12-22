@@ -137,6 +137,16 @@ ul {
   display: none;
 }
 
+.no-entries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-entries.hidden {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) {
   header > h2 {
     margin-left: 420px;

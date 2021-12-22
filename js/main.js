@@ -23,21 +23,29 @@ document.addEventListener('submit', function (event) {
   var entryList = document.querySelector('#entry-list');
   var create = createEntry(values);
   entryList.prepend(create);
+  entryForm.className = 'data hidden';
+  var noEntries = document.querySelector('.no-entries');
+  noEntries.className = 'no-entries hidden';
   form.reset();
 });
 
 var formBtn = document.querySelector('.new-entry');
-var counter = 1;
+var counter1 = 1;
 var entryForm = document.querySelector('.data');
 
 function newEntryForm(event) {
-  if (counter % 2) {
+  if (counter1 % 2) {
     entryForm.className = 'data';
   } else {
     entryForm.className = 'data hidden';
   }
 }
 formBtn.addEventListener('click', newEntryForm);
+
+if (data.entries.length > 0) {
+  var noEntries = document.querySelector('.no-entries');
+  noEntries.className = 'no-entries hidden';
+}
 
 window.addEventListener('DOMContentLoaded', function (event) {
   var entryList = document.querySelector('#entry-list');
