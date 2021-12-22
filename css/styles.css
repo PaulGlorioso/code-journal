@@ -8,8 +8,20 @@ body {
 
 header {
   display: flex;
+  align-items: center;
   background-color: #562b81;
   padding-left: 5%;
+}
+
+nav {
+  padding-left: 20px;
+}
+
+.nav-item {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
 header > h2 {
@@ -87,7 +99,24 @@ ul {
   padding: 5px 20px;
 }
 
-.entries > h2 {
+.entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.entry-header > a {
+  margin-right: 20px;
+  padding: 5px 22px;
+  border: 0 solid;
+  border-radius: 3px;
+  background-color: #562b81;
+  color: white;
+  text-decoration: none;
+}
+
+.entry-header > h2 {
   letter-spacing: 1px;
   font-size: 35px;
   margin: 0;
@@ -177,5 +206,14 @@ ul {
 
   p {
     font-size: 25px;
+  }
+
+  .entry-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 500px;
+    margin-left: 500px;
   }
 }
