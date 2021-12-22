@@ -90,10 +90,6 @@ button {
   padding: 10px 20px;
 }
 
-#entry-list {
-  display: flex;
-}
-
 ul {
   display: flex;
   flex-direction: column;
@@ -143,7 +139,7 @@ ul {
 
 @media screen and (min-width: 1000px) {
   header > h2 {
-    margin-left: 425px;
+    margin-left: 420px;
   }
 
   form {

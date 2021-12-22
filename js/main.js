@@ -39,12 +39,13 @@ function newEntryForm(event) {
 }
 formBtn.addEventListener('click', newEntryForm);
 
-// document.addEventListener('submit', function (event) {
-//   var entryList = document.querySelector('#entry-list');
-//   var create = createEntry(values);
-//   entryList.appendChild(create);
-
-// });
+window.addEventListener('DOMContentLoaded', function (event) {
+  var entryList = document.querySelector('#entry-list');
+  for (var i = 0; i < data.entries.length; i++) {
+    var create = createEntry(data.entries[i]);
+    entryList.appendChild(create);
+  }
+});
 
 function createEntry(values) {
 
