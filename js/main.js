@@ -29,6 +29,7 @@ document.addEventListener('submit', function (event) {
   form.reset();
 });
 
+// Showing the Entry Form
 var formBtn = document.querySelector('.new-entry');
 var counter1 = 1;
 var entryForm = document.querySelector('.data');
@@ -36,17 +37,21 @@ var entryForm = document.querySelector('.data');
 function newEntryForm(event) {
   if (counter1 % 2) {
     entryForm.className = 'data';
+    counter1 += 2;
   } else {
     entryForm.className = 'data hidden';
+    counter1 += 2;
   }
 }
 formBtn.addEventListener('click', newEntryForm);
 
+// If there are no entries
 if (data.entries.length > 0) {
   var noEntries = document.querySelector('.no-entries');
   noEntries.className = 'no-entries hidden';
 }
 
+// Showing an Entry
 window.addEventListener('DOMContentLoaded', function (event) {
   var entryList = document.querySelector('#entry-list');
   for (var i = 0; i < data.entries.length; i++) {
@@ -99,6 +104,7 @@ function createEntry(values) {
 
   var $editIcon = document.createElement('i');
   $editIcon.setAttribute('class', 'fas fa-pen');
+  $editIcon.setAttribute('data-entry-id', values.entryId);
 
   var $entryNotes = document.createElement('div');
   $entryNotes.setAttribute('class', 'entry-notes');
@@ -117,3 +123,23 @@ function createEntry(values) {
   $entryNotes.appendChild($notesText);
   return $entry;
 }
+
+// Editing an Entry
+var $entryList = document.querySelector('#entry-list');
+$entryList.addEventListener('click', function (event) {
+  if (event.target.tagName === 'I') {
+    var editBtn = event.target;
+    newEntryForm();
+    document.querySelector('.form-title').textContent = 'Edit Entry';
+    var entryNum = editBtn.getAttribute('data-entry-id');
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === parseInt(entryNum)) {
+        data.editing = data.entries[i];
+      }
+    }
+    title.value = data.editing.title;
+    photo.value = data.editing.photo;
+    notes.value = data.editing.note;
+    holder.setAttribute('src', data.editing.photo);
+  }
+});
