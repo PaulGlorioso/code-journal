@@ -79,7 +79,7 @@ function createEntry(values) {
   // </li>
   var $entry = document.createElement('li');
   $entry.setAttribute('class', 'entry-item');
-
+  $entry.setAttribute('data-entry-id', values.entryId);
   var $entryPhoto = document.createElement('div');
   $entryPhoto.setAttribute('class', 'entry-photo column-2');
 
@@ -97,6 +97,9 @@ function createEntry(values) {
   $titleText.setAttribute('class', 'font-family-mukta');
   $titleText.textContent = values.title;
 
+  var $editIcon = document.createElement('i');
+  $editIcon.setAttribute('class', 'fas fa-pen');
+
   var $entryNotes = document.createElement('div');
   $entryNotes.setAttribute('class', 'entry-notes');
 
@@ -110,6 +113,7 @@ function createEntry(values) {
   $columnText.appendChild($entryTitle);
   $columnText.appendChild($entryNotes);
   $entryTitle.appendChild($titleText);
+  $entryTitle.appendChild($editIcon);
   $entryNotes.appendChild($notesText);
   return $entry;
 }
