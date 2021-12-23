@@ -2,6 +2,10 @@ body {
   background-color: #f0f0f0;
 }
 
+main {
+  width: 100%;
+}
+
 .font-family-mukta {
   font-family: Mukta, sans-serif;
 }
@@ -21,7 +25,7 @@ nav {
   color: white;
   font-size: 1.5rem;
   text-decoration: none;
-  letter-spacing: 0.1rem;
+  letter-spacing: 1px;
 }
 
 header > h2 {
@@ -31,7 +35,7 @@ header > h2 {
 }
 
 form > h1 {
-  letter-spacing: 0.1rem;
+  letter-spacing: 1px;
   font-size: 2rem;
   margin: 0;
 }
@@ -98,6 +102,7 @@ ul {
 }
 
 .entry-header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,7 +111,7 @@ ul {
 
 .entry-header > a {
   margin-right: 1.25rem;
-  padding: 0.6rem 1.375rem;
+  padding: 0.3rem 1.375rem;
   border: 0 solid;
   border-radius: 3px;
   background-color: #562b81;
@@ -123,7 +128,7 @@ ul {
 
 .entry-photo > img {
   width: 100%;
-  padding: 0.9rem;
+  padding: 0.6rem;
   border: 0 solid;
   border-radius: 30px;
 }
@@ -137,6 +142,14 @@ ul {
   display: none;
 }
 
+.entries {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .no-entries {
   display: flex;
   align-items: center;
@@ -148,15 +161,30 @@ ul {
 }
 
 @media screen and (min-width: 1000px) {
+  header {
+    justify-content: center;
+  }
+
   header > h2 {
-    margin-left: 26.25rem;
+    position: relative;
+    right: 30rem;
+  }
+
+  header > nav {
+    position: relative;
+    right: 30rem;
+  }
+
+  .data {
+    display: flex;
+    justify-content: center;
   }
 
   form {
+    width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 31.25rem;
   }
 
   form > h1 {
@@ -185,13 +213,6 @@ ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 31.25rem;
-  }
-
-  .entries > h2 {
-    font-size: 2.188rem;
-    letter-spacing: 1px;
-    margin: 0 31.25rem;
   }
 
   .entry-item {
@@ -202,7 +223,6 @@ ul {
   }
 
   .entry-photo > img {
-    width: 100%;
     padding-right: 1.25rem;
     padding-bottom: 1.25rem;
   }
@@ -213,14 +233,15 @@ ul {
   }
 
   p {
-    font-size: 1.563rem;
+    font-size: 1.1rem;
+    margin: 0;
   }
 
   .entry-header {
+    width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
-    margin: 0 31.25rem;
   }
 }

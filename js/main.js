@@ -101,8 +101,8 @@ function createEntry(values) {
   $entryNotes.setAttribute('class', 'entry-notes');
 
   var $notesText = document.createElement('p');
-  $entryNotes.setAttribute('class', 'font-family-mukta');
-  $entryNotes.textContent = values.note;
+  $notesText.setAttribute('class', 'font-family-mukta');
+  $notesText.textContent = values.note;
 
   $entry.appendChild($entryPhoto);
   $entry.appendChild($columnText);
