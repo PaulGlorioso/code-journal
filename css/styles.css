@@ -2,25 +2,41 @@ body {
   background-color: #f0f0f0;
 }
 
+main {
+  width: 100%;
+}
+
 .font-family-mukta {
   font-family: Mukta, sans-serif;
 }
 
 header {
   display: flex;
+  align-items: center;
   background-color: #562b81;
-  padding-left: 5%;
+  padding-left: 1rem;
+}
+
+nav {
+  padding-left: 1.5rem;
+}
+
+.nav-item {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
 header > h2 {
   color: white;
-  font-weight: 100;
-  margin: 5px 0;
+  font-weight: 400;
+  margin: 0.5rem 0;
 }
 
 form > h1 {
   letter-spacing: 1px;
-  font-size: 35px;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -32,20 +48,20 @@ img {
 form {
   display: flex;
   flex-direction: column;
-  padding: 5px 20px;
+  padding: 0.3rem 1.25rem;
 }
 
 label {
   font-family: Mukta, sans-serif;
   font-weight: bold;
-  padding: 5px 0;
+  padding: 0.3rem 0;
   letter-spacing: 1px;
 }
 
 input {
   border: 1px solid gray;
   border-radius: 3px;
-  padding: 10px;
+  padding: 0.6rem;
   font-family: sans-serif;
 }
 
@@ -54,10 +70,10 @@ input:focus {
 }
 
 textarea {
-  padding: 5px;
+  padding: 0.3rem;
   font-family: sans-serif;
   border: 1px solid gray;
-  border-radius: 3px;
+  border-radius: 0.2rem;
 }
 
 textarea:focus {
@@ -67,7 +83,7 @@ textarea:focus {
 .submit {
   display: flex;
   justify-content: flex-end;
-  padding-top: 20px;
+  padding-top: 1.25rem;
 }
 
 button {
@@ -75,7 +91,46 @@ button {
   color: white;
   border: 0 solid white;
   border-radius: 3px;
-  padding: 10px 20px;
+  padding: 0.6rem 1.25rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0.3rem 1.25rem;
+}
+
+.entry-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.entry-header > a {
+  margin-right: 1.25rem;
+  padding: 0.3rem 1.375rem;
+  border: 0 solid;
+  border-radius: 3px;
+  background-color: #562b81;
+  color: white;
+  text-decoration: none;
+}
+
+.entry-header > h2 {
+  letter-spacing: 1px;
+  font-size: 2.188rem;
+  margin: 0;
+  padding-left: 0.9rem;
+}
+
+.entry-photo > img {
+  width: 100%;
+  padding: 0.6rem;
+  border: 0 solid;
+  border-radius: 30px;
 }
 
 .column-2 {
@@ -83,17 +138,53 @@ button {
   flex-direction: column;
 }
 
+.data.hidden {
+  display: none;
+}
+
+.entries {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.no-entries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-entries.hidden {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) {
+  header {
+    justify-content: center;
+  }
+
   header > h2 {
-    margin-left: 425px;
+    position: relative;
+    right: 30rem;
+  }
+
+  header > nav {
+    position: relative;
+    right: 30rem;
+  }
+
+  .data {
+    display: flex;
+    justify-content: center;
   }
 
   form {
+    width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 500px;
-    margin-right: 500px;
   }
 
   form > h1 {
@@ -102,7 +193,7 @@ button {
 
   form > img {
     width: 50%;
-    padding-right: 20px;
+    padding-right: 1.25rem;
   }
 
   textarea {
@@ -111,10 +202,46 @@ button {
 
   .column-2 {
     flex-basis: 50%;
-    padding-bottom: 25px;
+    padding-bottom: 1.563rem;
   }
 
   .submit {
     width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .entry-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.3rem;
+  }
+
+  .entry-photo > img {
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.875rem;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .entry-header {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
   }
 }

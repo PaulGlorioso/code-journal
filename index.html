@@ -18,9 +18,12 @@
 <body>
   <header>
     <h2 class="font-family-mukta">Code Journal</h2>
+    <nav>
+      <a class="nav-item font-family-mukta" href="index.html">Entries</a>
+    </nav>
   </header>
   <main>
-    <div class="data" data-view="entry-form">
+    <div class="data hidden" data-view="entry-form">
       <form id="form">
         <h1 class="font-family-mukta">New Entry</h1>
         <img class="photoholder column-2" src="/images/placeholder-image-square.jpg" alt="placeholder-image">
@@ -36,6 +39,17 @@
           <button class="subbtn" type="submit">SAVE</button>
         </div>
       </form>
+    </div>
+    <div class="entries" data-view="entries">
+      <div class="entry-header">
+        <h2 class="font-family-mukta">Entries</h2>
+        <a class="new-entry font-family-mukta" href="#">NEW</a>
+      </div>
+      <div class="no-entries font-family-mukta">
+        <p>No entries have been recorded.</p>
+      </div>
+      <ul id="entry-list">
+      </ul>
     </div>
   </main>
   <script src="js/data.js"></script>
