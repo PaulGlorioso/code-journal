@@ -16,13 +16,26 @@ document.addEventListener('submit', function (event) {
   values.title = title.value;
   values.photo = photo.value;
   values.note = notes.value;
-  values.entryId = data.nextEntryId;
-  data.nextEntryId++;
-  data.entries.unshift(values);
+  if (values.title === data.editing.title || values.photo === data.editing.photo || values.note === data.editing.note) {
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.editing.entryId === data.entries[i].entryId) {
+        data.entries[i].title = title.value;
+        data.entries[i].photo = photo.value;
+        data.entries[i].note = notes.value;
+        var update = createEntry(data.entries[i]);
+        var replace = document.getElementById(data.editing.entryId);
+        replace.replaceWith(update);
+      }
+    }
+  } else {
+    values.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift(values);
+    var entryList = document.querySelector('#entry-list');
+    var create = createEntry(values);
+    entryList.prepend(create);
+  }
   holder.setAttribute('src', '/images/placeholder-image-square.jpg');
-  var entryList = document.querySelector('#entry-list');
-  var create = createEntry(values);
-  entryList.prepend(create);
   entryForm.className = 'data hidden';
   var noEntries = document.querySelector('.no-entries');
   noEntries.className = 'no-entries hidden';
@@ -51,7 +64,7 @@ if (data.entries.length > 0) {
   noEntries.className = 'no-entries hidden';
 }
 
-// Showing an Entry
+// Showing a new Entry to list
 window.addEventListener('DOMContentLoaded', function (event) {
   var entryList = document.querySelector('#entry-list');
   for (var i = 0; i < data.entries.length; i++) {
@@ -85,6 +98,7 @@ function createEntry(values) {
   var $entry = document.createElement('li');
   $entry.setAttribute('class', 'entry-item');
   $entry.setAttribute('data-entry-id', values.entryId);
+  $entry.setAttribute('id', values.entryId);
   var $entryPhoto = document.createElement('div');
   $entryPhoto.setAttribute('class', 'entry-photo column-2');
 
