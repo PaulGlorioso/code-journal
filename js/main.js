@@ -157,4 +157,49 @@ $entryList.addEventListener('click', function (event) {
     notes.value = data.editing.note;
     holder.setAttribute('src', data.editing.photo);
   }
+  var deleteEntry = document.createElement('a');
+  deleteEntry.setAttribute('href', '#');
+  deleteEntry.setAttribute('class', 'delete-btn font-family-mukta');
+  deleteEntry.textContent = 'Delete Entry';
+  var $selection = document.querySelector('.submit');
+  $selection.setAttribute('class', 'selection');
+  $selection.prepend(deleteEntry);
+  $selection.addEventListener('click', function (event) {
+    if (event.target.tagName === 'A') {
+      var overlay = document.querySelector('.overlay.off');
+      var popup = document.querySelector('.popup.closed');
+      overlay.className = 'overlay on';
+      popup.className = 'popup open';
+    }
+  });
+  var cancel = document.querySelector('.cancel-btn');
+  cancel.addEventListener('click', function (event) {
+    var overlay = document.querySelector('.overlay.on');
+    var popup = document.querySelector('.popup.open');
+    overlay.className = 'overlay off';
+    popup.className = 'popup closed';
+  });
+  var confirm = document.querySelector('.delete-button');
+  confirm.addEventListener('click', function (event) {
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.editing.entryId === data.entries[i].entryId) {
+        var item = document.getElementById(data.editing.entryId);
+        item.remove();
+        data.entries.splice(i, 1);
+        var overlay = document.querySelector('.overlay.on');
+        var popup = document.querySelector('.popup.open');
+        overlay.className = 'overlay off';
+        popup.className = 'popup closed';
+      }
+      holder.setAttribute('src', '/images/placeholder-image-square.jpg');
+      var form = document.querySelector('#form');
+      document.querySelector('.form-title').textContent = 'New Entry';
+      deleteEntry.remove();
+      var $selection = document.querySelector('.selection');
+      $selection.setAttribute('class', 'submit');
+      entryForm.className = 'data hidden';
+      form.reset();
+      data.editing = null;
+    }
+  });
 });

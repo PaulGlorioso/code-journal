@@ -171,6 +171,106 @@ ul {
   font-size: 1.5rem;
 }
 
+.selection {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  width: 100%;
+}
+
+.delete-btn {
+  color: red;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.popup.closed {
+  display: none;
+}
+
+.popup.open {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 3%;
+  right: 50%;
+  bottom: 50%;
+}
+
+.confirmation {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 0;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+.confirmation > h3 {
+  font-size: 1rem;
+}
+
+.button-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.cancel-btn {
+  background-color: #b6b6b6;
+  color: black;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.overlay.off {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0 0 0 / 64.4%);
+  bottom: 0;
+}
+
+.overlay.on {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #323232e1;
+  bottom: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 375px) {
+  .popup.open {
+    left: 10%;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .popup.open {
+    left: 15%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popup.open {
+    left: 30%;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   header {
     justify-content: center;
@@ -252,5 +352,25 @@ ul {
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
+  }
+
+  .popup.closed {
+    display: none;
+  }
+
+  .popup.open {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    right: 50%;
+    bottom: 50%;
+    width: 100%;
+  }
+
+  .confirmation > h3 {
+    padding: 2rem;
   }
 }
