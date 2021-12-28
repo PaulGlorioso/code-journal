@@ -16,17 +16,31 @@ document.addEventListener('submit', function (event) {
   values.title = title.value;
   values.photo = photo.value;
   values.note = notes.value;
-  values.entryId = data.nextEntryId;
-  data.nextEntryId++;
-  data.entries.unshift(values);
+  if (data.editing !== null) {
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        data.entries[i].title = title.value;
+        data.entries[i].photo = photo.value;
+        data.entries[i].note = notes.value;
+        var update = createEntry(data.entries[i]);
+        var replace = document.getElementById(data.editing.entryId);
+        replace.replaceWith(update);
+      }
+    }
+  } else {
+    values.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift(values);
+    var entryList = document.querySelector('#entry-list');
+    var create = createEntry(values);
+    entryList.prepend(create);
+  }
   holder.setAttribute('src', '/images/placeholder-image-square.jpg');
-  var entryList = document.querySelector('#entry-list');
-  var create = createEntry(values);
-  entryList.prepend(create);
   entryForm.className = 'data hidden';
   var noEntries = document.querySelector('.no-entries');
   noEntries.className = 'no-entries hidden';
   form.reset();
+  data.editing = null;
 });
 
 // Showing the Entry Form
