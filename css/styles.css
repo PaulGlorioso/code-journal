@@ -197,9 +197,10 @@ ul {
   align-items: center;
   justify-self: center;
   position: fixed;
+  width: 100%;
   top: 50%;
   left: 3%;
-  right: 2%;
+  right: 50%;
   bottom: 50%;
 }
 
@@ -250,6 +251,24 @@ ul {
   background-color: #323232e1;
   bottom: 0;
   left: 0;
+}
+
+@media screen and (min-width: 375px) {
+  .popup.open {
+    left: 10%;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .popup.open {
+    left: 15%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popup.open {
+    left: 30%;
+  }
 }
 
 @media screen and (min-width: 1000px) {
