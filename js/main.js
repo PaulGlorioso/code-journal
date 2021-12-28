@@ -16,9 +16,9 @@ document.addEventListener('submit', function (event) {
   values.title = title.value;
   values.photo = photo.value;
   values.note = notes.value;
-  if (values.title === data.editing.title || values.photo === data.editing.photo || values.note === data.editing.note) {
+  if (data.editing !== null) {
     for (var i = 0; i < data.entries.length; i++) {
-      if (data.editing.entryId === data.entries[i].entryId) {
+      if (data.entries[i].entryId === data.editing.entryId) {
         data.entries[i].title = title.value;
         data.entries[i].photo = photo.value;
         data.entries[i].note = notes.value;
@@ -40,6 +40,7 @@ document.addEventListener('submit', function (event) {
   var noEntries = document.querySelector('.no-entries');
   noEntries.className = 'no-entries hidden';
   form.reset();
+  data.editing = null;
 });
 
 // Showing the Entry Form
